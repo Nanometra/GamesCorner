@@ -1,0 +1,6 @@
+com\projet\entities\Article.class
+com\projet\entities\Utilisateur.class
+com\projet\entities\Commande.class
+com\projet\entities\Vendeur.class
+com\projet\entities\Panier.class
+com\projet\entities\Client.class
