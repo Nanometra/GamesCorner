@@ -32,7 +32,7 @@
 		<!-- Servlet API -->
 		<servlet.api.version>3.1.0</servlet.api.version>
 		<!-- Commons -->
-		<commons.version>1.3</commons.version>
+		<commons.version>1.3.3</commons.version>
 		<!-- PRIMEFACES -->
 		<primefaces.version>6.2</primefaces.version>
 		<!-- JODA -->
