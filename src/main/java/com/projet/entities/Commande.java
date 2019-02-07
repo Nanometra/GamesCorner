@@ -1,13 +1,10 @@
 package com.projet.entities;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
 
 public class Commande implements Serializable{
 	
@@ -21,25 +18,11 @@ public class Commande implements Serializable{
 	private int id;
 	private Article article;
 	private int quantite;
+	private Utilisateur client;
 
 	
 	public Commande() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-
-	public Commande(int id, Article article, int quantite) {
-		super();
-		this.id = id;
-		this.article = article;
-		this.quantite = quantite;
-	}
-
-	public Commande(Article article, int quantite) {
-		super();
-		this.article = article;
-		this.quantite = quantite;
 	}
 
 	public int getId() {
@@ -65,10 +48,18 @@ public class Commande implements Serializable{
 	public void setQuantite(int quantite) {
 		this.quantite = quantite;
 	}
+	
+	public Utilisateur getClient() {
+		return client;
+	}
+
+	public void setClient(Utilisateur client) {
+		this.client = client;
+	}
 
 	@Override
 	public String toString() {
-		return "Commande [id=" + id + ", article=" + article + ", quantite=" + quantite + "]";
+		return "Commande [id=" + id + ", article=" + article + ", quantite=" + quantite + ", client=" + client + "]";
 	}
 
 }

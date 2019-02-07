@@ -1,6 +1,6 @@
 package com.projet.entities;
 
-import java.util.HashMap;
+import java.util.Map;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -21,14 +21,13 @@ public class Vendeur extends Utilisateur {
 	// % de commission prélevé par le site au vendeur
 	private Float commission;
 	// Liste articles à vendre
-	private HashMap<Long, Article> listeArticles;
+	private Map<Long, Article> listeArticles;
 	
 	public Vendeur() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public Vendeur(DateTime dateDebutVendeur, Float commission, HashMap<Long, Article> listeArticles) {
+	public Vendeur(DateTime dateDebutVendeur, Float commission, Map<Long, Article> listeArticles) {
 		super();
 		this.dateDebutVendeur = dateDebutVendeur;
 		this.commission = commission;
@@ -51,11 +50,11 @@ public class Vendeur extends Utilisateur {
 		this.commission = commission;
 	}
 
-	public HashMap<Long, Article> getListeArticles() {
+	public Map<Long, Article> getListeArticles() {
 		return listeArticles;
 	}
 
-	public void setListeArticles(HashMap<Long, Article> listeArticles) {
+	public void setListeArticles(Map<Long, Article> listeArticles) {
 		this.listeArticles = listeArticles;
 	}
 

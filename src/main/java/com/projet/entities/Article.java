@@ -24,22 +24,20 @@ public abstract class Article implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	private String type;
-	private Float prix;
-	private String description;
+	protected int id;
+	protected String type;
+	protected Float prix;
+	protected String description;
 	// Neuf ou d'occasion
-	private String etat;
-	private String image;
-	private String rating;
-	private String commentaire;
+	protected String etat;
+	protected String image;
+	protected String rating;
 	// date de sortie de l'article
-	private DateTime dateSortie;
+	protected DateTime dateSortie;
 	
 	// Constructeur
 	public Article() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	// Getters et Setters
@@ -99,14 +97,6 @@ public abstract class Article implements Serializable {
 	public void setRating(String rating) {
 		this.rating = rating;
 	}
-	
-	public String getCommentaire() {
-		return commentaire;
-	}
-
-	public void setCommentaire(String commentaire) {
-		this.commentaire = commentaire;
-	}
 
 	public DateTime getDateSortie() {
 		return dateSortie;
@@ -119,8 +109,7 @@ public abstract class Article implements Serializable {
 	@Override
 	public String toString() {
 		return "Article [id=" + id + ", type=" + type + ", prix=" + prix + ", description=" + description + ", etat="
-				+ etat + ", image=" + image + ", rating=" + rating + ", commentaire=" + commentaire + ", dateSortie="
-				+ dateSortie + "]";
+				+ etat + ", image=" + image + ", rating=" + rating + ", dateSortie=" + dateSortie + "]";
 	}
 	
 }

@@ -1,7 +1,7 @@
 package com.projet.entities;
 
 import java.io.Serializable;
-import java.util.HashMap;
+import java.util.Map;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -32,68 +32,30 @@ public abstract class Utilisateur implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
-	private String nom;
-	private String prenom;
-	private String motDePasse;
-	private String confirmationMotDePasse;
-	private String email;
-	private DateTime dateInscription;
-	private String imageProfil;
+	protected int id;
+	protected String nom;
+	protected String prenom;
+	protected String motDePasse;
+	protected String confirmationMotDePasse;
+	protected String email;
+	protected DateTime dateInscription;
+	protected String imageProfil;
 	// Indique si l'utilisateur est également vendeur sur la partie vente particulier à particulier
-	private Boolean vendeur;
+	protected Boolean vendeur;
 	// Indique si l'utilisateur est également un admin sur la partie forum de l'application.
-	private Boolean admin;
-	private String description;
+	protected Boolean admin;
+	protected String description;
 	// Historique des articles achetés
-	private HashMap<Long, Commande> historique;
+	protected Map<Long, Facture> historique;
 	// L'utilisateur devient actif après avoir validé son compte (validation envoyée par mail directement dans la boite mail du client).
-	private Boolean actif;
+	protected Boolean actif;
 	
 	// Constructeurs
 	
 	public Utilisateur() {
 		super();
-		// TODO Auto-generated constructor stub
 	}	
-			
-	public Utilisateur(int id, String nom, String prenom, String motDePasse, String confirmationMotDePasse,
-			String email, DateTime dateInscription, String imageProfil, Boolean vendeur, Boolean admin,
-			String description, HashMap<Long, Commande> historique, Boolean actif) {
-		super();
-		this.id = id;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.motDePasse = motDePasse;
-		this.confirmationMotDePasse = confirmationMotDePasse;
-		this.email = email;
-		this.dateInscription = dateInscription;
-		this.imageProfil = imageProfil;
-		this.vendeur = vendeur;
-		this.admin = admin;
-		this.description = description;
-		this.historique = historique;
-		this.actif = actif;
-	}
 
-	public Utilisateur(String nom, String prenom, String motDePasse, String confirmationMotDePasse, String email,
-			DateTime dateInscription, String imageProfil, Boolean vendeur, Boolean admin, String description,
-			HashMap<Long, Commande> historique, Boolean actif) {
-		super();
-		this.nom = nom;
-		this.prenom = prenom;
-		this.motDePasse = motDePasse;
-		this.confirmationMotDePasse = confirmationMotDePasse;
-		this.email = email;
-		this.dateInscription = dateInscription;
-		this.imageProfil = imageProfil;
-		this.vendeur = vendeur;
-		this.admin = admin;
-		this.description = description;
-		this.historique = historique;
-		this.actif = actif;
-	}
-	
 	public int getId() {
 		return id;
 	}
@@ -118,11 +80,11 @@ public abstract class Utilisateur implements Serializable {
 		this.description = description;
 	}
 
-	public HashMap<Long, Commande> getHistorique() {
+	public Map<Long, Facture> getHistorique() {
 		return historique;
 	}
 
-	public void setHistorique(HashMap<Long, Commande> historique) {
+	public void setHistorique(Map<Long, Facture> historique) {
 		this.historique = historique;
 	}
 

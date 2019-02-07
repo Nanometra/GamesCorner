@@ -1,8 +1,13 @@
 package com.projet.entities;
 
-import javax.persistence.DiscriminatorValue;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="client")
@@ -19,17 +24,21 @@ public class Client extends Utilisateur {
 	 */
 	private static final long serialVersionUID = 1L;
 	
+	// Le panier ne sera pas persisté en base
+	@Transient
 	private Panier panier;
 	private String adresseLivraison;
 	private String codePostal;
 	private String telephone;
+	
+	@OneToMany(mappedBy="client", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Map<Integer, Commentaire> commentaires = new HashMap<>();
 
 	
 	// Constructeurs
 	
 	public Client() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public Client(Panier panier, String adresseLivraison, String codePostal, String telephone) {
@@ -72,10 +81,28 @@ public class Client extends Utilisateur {
 		this.telephone = telephone;
 	}
 
+	public Map<Integer, Commentaire> getCommentaires() {
+		return commentaires;
+	}
+
+	public void setCommentaires(Map<Integer, Commentaire> commentaires) {
+		this.commentaires = commentaires;
+	}
+	
+	public void addCommentaire(Commentaire commentaire) {
+		commentaires.put(commentaire.getId(), commentaire);
+		commentaire.setClient(this);
+	}
+	
+	public void removeCommentaire(Commentaire commentaire) {
+		commentaires.remove(commentaire.getId());
+		commentaire.setClient(null);
+	}
+
 	@Override
 	public String toString() {
 		return "Client [panier=" + panier + ", adresseLivraison=" + adresseLivraison + ", codePostal=" + codePostal
-				+ ", telephone=" + telephone + "]";
+				+ ", telephone=" + telephone + ", commentaires=" + commentaires + "]";
 	}
 
 }

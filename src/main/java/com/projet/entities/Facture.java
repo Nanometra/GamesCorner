@@ -1,6 +1,7 @@
 package com.projet.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,28 +27,10 @@ public class Facture implements Serializable{
 	private String moyenPaiement;
 	// Paramètre déterminant si le client a payé sa commande.
 	private Boolean finalisationTransaction;
+	private List<Commande> commandes; 
 	
 	public Facture() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public Facture(int id, Double prixTotal, Utilisateur client, String moyenPaiement,
-			Boolean finalisationTransaction) {
-		super();
-		this.id = id;
-		this.prixTotal = prixTotal;
-		this.client = client;
-		this.moyenPaiement = moyenPaiement;
-		this.finalisationTransaction = finalisationTransaction;
-	}
-
-	public Facture(Double prixTotal, Utilisateur client, String moyenPaiement, Boolean finalisationTransaction) {
-		super();
-		this.prixTotal = prixTotal;
-		this.client = client;
-		this.moyenPaiement = moyenPaiement;
-		this.finalisationTransaction = finalisationTransaction;
 	}
 
 	public int getId() {
@@ -90,10 +73,19 @@ public class Facture implements Serializable{
 		this.finalisationTransaction = finalisationTransaction;
 	}
 
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
 	@Override
 	public String toString() {
 		return "Facture [id=" + id + ", prixTotal=" + prixTotal + ", client=" + client + ", moyenPaiement="
-				+ moyenPaiement + ", finalisationTransaction=" + finalisationTransaction + "]";
+				+ moyenPaiement + ", finalisationTransaction=" + finalisationTransaction + ", commandes=" + commandes
+				+ "]";
 	}
 	
 }

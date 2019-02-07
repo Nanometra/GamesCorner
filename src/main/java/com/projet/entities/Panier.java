@@ -1,10 +1,16 @@
 package com.projet.entities;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-public class Panier {
+public class Panier implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private Float prixTotal;
 	private List<Commande> listeCommandes;
 	
@@ -24,29 +30,28 @@ public class Panier {
 
 	public Panier() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Float getPrixTotal() {
 		return prixTotal;
 	}
 
-	public void setPrixTotal(Float prixTotal) {
-		prixTotal = calculerPrixTotal(listeCommandes);
-		this.prixTotal = prixTotal;
+	public void setPrixTotal() {
+		Float prixTotalCalcule = calculerPrixTotal(listeCommandes);
+		this.prixTotal = prixTotalCalcule;
 	}
 	
 	private Float calculerPrixTotal(List<Commande> listeCommandes) {
 		
-		Float prixTotal = 0f;
+		Float prixTotalCalcule = 0f;
 		Iterator<Commande> itr = listeCommandes.iterator();
 		
 		while (itr.hasNext()) {
 			Commande commande = itr.next();
-			prixTotal = prixTotal + commande.getArticle().getPrix(); 
+			prixTotalCalcule = prixTotalCalcule + commande.getArticle().getPrix(); 
 		}
 		
-		return prixTotal;
+		return prixTotalCalcule;
 	}
 	
 	@Override
