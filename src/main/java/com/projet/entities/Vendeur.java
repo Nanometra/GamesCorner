@@ -3,6 +3,7 @@ package com.projet.entities;
 import java.util.Map;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.joda.time.DateTime;
@@ -20,7 +21,9 @@ public class Vendeur extends Utilisateur {
 	private DateTime dateDebutVendeur;
 	// % de commission prélevé par le site au vendeur
 	private Float commission;
+	
 	// Liste articles à vendre
+	@OneToMany(mappedBy="vendeur")
 	private Map<Long, Article> listeArticles;
 	
 	public Vendeur() {

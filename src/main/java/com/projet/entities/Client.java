@@ -34,6 +34,9 @@ public class Client extends Utilisateur {
 	@OneToMany(mappedBy="client", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Map<Integer, Commentaire> commentaires = new HashMap<>();
 
+	// Historique des articles achetés
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Map<Long, Facture> historique;
 	
 	// Constructeurs
 	

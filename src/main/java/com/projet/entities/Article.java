@@ -3,11 +3,14 @@ package com.projet.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.joda.time.DateTime;
@@ -34,6 +37,11 @@ public abstract class Article implements Serializable {
 	protected String rating;
 	// date de sortie de l'article
 	protected DateTime dateSortie;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name="vendeur_id")
+	protected Vendeur vendeur;
+	
 	
 	// Constructeur
 	public Article() {

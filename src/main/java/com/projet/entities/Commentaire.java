@@ -25,7 +25,9 @@ public class Commentaire implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique = true, nullable = true)
 	private int id;
+	@Column(unique = true, nullable = true)
 	private DateTime dateCommentaire;
 	private String commentaireUtilisateur;
 	

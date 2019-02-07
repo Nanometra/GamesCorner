@@ -45,8 +45,7 @@ public abstract class Utilisateur implements Serializable {
 	// Indique si l'utilisateur est également un admin sur la partie forum de l'application.
 	protected Boolean admin;
 	protected String description;
-	// Historique des articles achetés
-	protected Map<Long, Facture> historique;
+			
 	// L'utilisateur devient actif après avoir validé son compte (validation envoyée par mail directement dans la boite mail du client).
 	protected Boolean actif;
 	
@@ -78,14 +77,6 @@ public abstract class Utilisateur implements Serializable {
 
 	public void setDescription(String description) {
 		this.description = description;
-	}
-
-	public Map<Long, Facture> getHistorique() {
-		return historique;
-	}
-
-	public void setHistorique(Map<Long, Facture> historique) {
-		this.historique = historique;
 	}
 
 	public Boolean getActif() {
@@ -165,7 +156,7 @@ public abstract class Utilisateur implements Serializable {
 		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", motDePasse=" + motDePasse
 				+ ", confirmationMotDePasse=" + confirmationMotDePasse + ", email=" + email + ", dateInscription="
 				+ dateInscription + ", imageProfil=" + imageProfil + ", vendeur=" + vendeur + ", admin=" + admin
-				+ ", description=" + description + ", historique=" + historique + ", actif=" + actif + "]";
+				+ ", description=" + description + ", actif=" + actif + "]";
 	}
 	
 }

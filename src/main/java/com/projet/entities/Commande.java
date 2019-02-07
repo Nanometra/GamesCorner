@@ -18,7 +18,7 @@ public class Commande implements Serializable{
 	private int id;
 	private Article article;
 	private int quantite;
-	private Utilisateur client;
+	private Client client;
 
 	
 	public Commande() {
@@ -49,11 +49,11 @@ public class Commande implements Serializable{
 		this.quantite = quantite;
 	}
 	
-	public Utilisateur getClient() {
+	public Client getClient() {
 		return client;
 	}
 
-	public void setClient(Utilisateur client) {
+	public void setClient(Client client) {
 		this.client = client;
 	}
 
