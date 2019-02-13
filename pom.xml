@@ -25,6 +25,8 @@
 		<spring.version>4.3.2.RELEASE</spring.version>
 		<!-- HIBERNATE -->
 		<hibernate.version>5.3.7.Final</hibernate.version>
+		<hibernate.validator.version>6.0.13.Final</hibernate.validator.version>
+		<hibernate.search.version>5.10.5.Final</hibernate.search.version>
 		<!-- POSTGRESQL -->
 		<postgresql.version>42.2.5</postgresql.version>
 		<!-- JSF -->
@@ -130,6 +132,18 @@
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+		<dependency>
+			<groupId>org.hibernate.validator</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate.validator.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-search-orm -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search-orm</artifactId>
+			<version>${hibernate.search.version}</version>
 		</dependency>
 
 	</dependencies>

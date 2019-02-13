@@ -1,8 +1,10 @@
 package com.projet.entities;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.joda.time.DateTime;
@@ -44,10 +47,15 @@ public abstract class Utilisateur implements Serializable {
 	protected Boolean vendeur;
 	// Indique si l'utilisateur est également un admin sur la partie forum de l'application.
 	protected Boolean admin;
+	
+	// Description facultative de l'utilisateur
 	protected String description;
 			
 	// L'utilisateur devient actif après avoir validé son compte (validation envoyée par mail directement dans la boite mail du client).
 	protected Boolean actif;
+	
+	@OneToMany(mappedBy="utilisateur", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Map<Integer, Post> commentaires = new HashMap<>();
 	
 	// Constructeurs
 	
@@ -150,13 +158,31 @@ public abstract class Utilisateur implements Serializable {
 	public void setImageProfil(String imageProfil) {
 		this.imageProfil = imageProfil;
 	}
+	
+	public Map<Integer, Post> getCommentaires() {
+		return commentaires;
+	}
+
+	public void setCommentaires(Map<Integer, Post> commentaires) {
+		this.commentaires = commentaires;
+	}
+
+	public void addCommentaire(Commentaire commentaire) {
+		commentaires.put(commentaire.getId(), commentaire);
+		commentaire.setUtilisateur(this);
+	}
+	
+	public void removeCommentaire(Commentaire commentaire) {
+		commentaires.remove(commentaire.getId());
+		commentaire.setUtilisateur(null);
+	}
 
 	@Override
 	public String toString() {
 		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", motDePasse=" + motDePasse
 				+ ", confirmationMotDePasse=" + confirmationMotDePasse + ", email=" + email + ", dateInscription="
 				+ dateInscription + ", imageProfil=" + imageProfil + ", vendeur=" + vendeur + ", admin=" + admin
-				+ ", description=" + description + ", actif=" + actif + "]";
+				+ ", description=" + description + ", actif=" + actif + ", commentaires=" + commentaires + "]";
 	}
 	
 }

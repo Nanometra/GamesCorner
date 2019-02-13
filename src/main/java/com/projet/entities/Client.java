@@ -1,6 +1,5 @@
 package com.projet.entities;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.CascadeType;
@@ -27,16 +26,14 @@ public class Client extends Utilisateur {
 	// Le panier ne sera pas persisté en base
 	@Transient
 	private Panier panier;
+	
 	private String adresseLivraison;
 	private String codePostal;
 	private String telephone;
 	
-	@OneToMany(mappedBy="client", cascade = CascadeType.ALL, orphanRemoval = true)
-	private Map<Integer, Commentaire> commentaires = new HashMap<>();
-
-	// Historique des articles achetés
+	// Historique des articles achetés (spécifique au client, il est le seul qui peut passer commande)
 	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-	private Map<Long, Facture> historique;
+	private Map<Integer, Commande> historique;
 	
 	// Constructeurs
 	
@@ -84,28 +81,17 @@ public class Client extends Utilisateur {
 		this.telephone = telephone;
 	}
 
-	public Map<Integer, Commentaire> getCommentaires() {
-		return commentaires;
+	public Map<Integer, Commande> getHistorique() {
+		return historique;
 	}
 
-	public void setCommentaires(Map<Integer, Commentaire> commentaires) {
-		this.commentaires = commentaires;
-	}
-	
-	public void addCommentaire(Commentaire commentaire) {
-		commentaires.put(commentaire.getId(), commentaire);
-		commentaire.setClient(this);
-	}
-	
-	public void removeCommentaire(Commentaire commentaire) {
-		commentaires.remove(commentaire.getId());
-		commentaire.setClient(null);
+	public void setHistorique(Map<Integer, Commande> historique) {
+		this.historique = historique;
 	}
 
 	@Override
 	public String toString() {
 		return "Client [panier=" + panier + ", adresseLivraison=" + adresseLivraison + ", codePostal=" + codePostal
-				+ ", telephone=" + telephone + ", commentaires=" + commentaires + "]";
+				+ ", telephone=" + telephone + ", historique=" + historique + "]";
 	}
-
 }

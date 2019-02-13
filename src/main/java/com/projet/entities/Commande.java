@@ -1,26 +1,49 @@
 package com.projet.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
-public class Commande implements Serializable{
-	
+@Entity
+@Table(name = "commande")
+public class Commande implements Serializable {
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private Article article;
-	private int quantite;
+
+	private Float prixTotal;
+
+	/*
+	 * La commande ne peut être passée que par un client.
+	 */
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "client_id")
 	private Client client;
 
+	private String moyenPaiement;
 	
+
+	@OneToMany(mappedBy = "commande", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Selection> selections;
+	
+	private Panier panier;
+
 	public Commande() {
 		super();
 	}
@@ -33,22 +56,30 @@ public class Commande implements Serializable{
 		this.id = id;
 	}
 
-	public Article getArticle() {
-		return article;
+	public Float getPrixTotal() {
+		return prixTotal;
 	}
 
-	public void setArticle(Article article) {
-		this.article = article;
+	public void setPrixTotal(Float prixTotal) {
+		this.prixTotal = prixTotal;
 	}
 
-	public int getQuantite() {
-		return quantite;
+	public String getMoyenPaiement() {
+		return moyenPaiement;
 	}
 
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
+	public void setMoyenPaiement(String moyenPaiement) {
+		this.moyenPaiement = moyenPaiement;
 	}
-	
+
+	public List<Selection> getSelections() {
+		return selections;
+	}
+
+	public void setSelections(List<Selection> selections) {
+		this.selections = selections;
+	}
+
 	public Client getClient() {
 		return client;
 	}
@@ -56,10 +87,19 @@ public class Commande implements Serializable{
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	
+	public Panier getPanier() {
+		return panier;
+	}
+
+	public void setPanier(Panier panier) {
+		this.panier = panier;
+	}
 
 	@Override
 	public String toString() {
-		return "Commande [id=" + id + ", article=" + article + ", quantite=" + quantite + ", client=" + client + "]";
+		return "Commande [id=" + id + ", prixTotal=" + prixTotal + ", client=" + client + ", moyenPaiement="
+				+ moyenPaiement + ", selections=" + selections + ", panier=" + panier + "]";
 	}
 
 }
