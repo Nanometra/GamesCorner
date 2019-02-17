@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
   <display-name>GamesCorner</display-name>
+  
+  <listener>
+  	<listener-class>
+  		
+  	</listener-class>
+  </listener>
+  
   <context-param>
   	<param-name>javax.faces.PROJECT_STAGE</param-name>
   	<param-value>Development</param-value>
@@ -13,10 +20,31 @@
   	<param-name>primefaces.THEME</param-name>
   	<param-value>bootstrap</param-value>
   </context-param>
+  
+  <!-- Forcer la valeur d'une string comme valeur nulle plutôt qu'une chaine vide -->
   <context-param>
   	<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
   	<param-value>true</param-value>
   </context-param>
+  
+  <!-- Définition de l'encodage à UTF-8 -->
+  <filter>
+  	<filter-name>Set Character Encoding</filter-name>
+  	<filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>UTF-8</param-value>
+  	</init-param>
+  	<init-param>
+  		<param-name>ignore</param-name>
+  		<param-value>false</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+	<filter-name>Set Character Encoding</filter-name>
+	<url-pattern>/*</url-pattern>
+  </filter-mapping>
   
   <servlet>
     <servlet-name>Faces Servlet</servlet-name>
@@ -26,7 +54,7 @@
   <servlet-mapping>
     <servlet-name>Faces Servlet</servlet-name>
     <url-pattern>/faces/*</url-pattern>
-    <url-pattern>/*</url-pattern>
+<!--     <url-pattern>/*</url-pattern> -->
     <url-pattern>*.jsf</url-pattern>
     <url-pattern>*.faces</url-pattern>
   </servlet-mapping>

@@ -1,6 +1,15 @@
 D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Panier.java
-D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Vendeur.java
 D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Client.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\enums\Type.java
 D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Article.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Post.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Selection.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\dao\impl\UtilisateurDAOImpl.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\dao\IGeneriqueDAO.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\dao\IPostDAO.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\dao\IUtilisateurDAO.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Vendeur.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\dao\IArticleDAO.java
+D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Commentaire.java
 D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Utilisateur.java
 D:\Spring_Workspaces\GamesCorner\src\main\java\com\projet\entities\Commande.java
