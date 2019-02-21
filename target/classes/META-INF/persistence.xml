@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+	version="2.1">
+	<!-- Pour du JAVA JEE, on utilise JTA comme transaction-type (Serveur d'application avec 
+		 une datasource pointant sur la base PostgreSQL.
+		 Pour du JAVA SE, on utilise RESOURCE_LOCAL 
+	 -->
+	<persistence-unit name="games_corner_PU"
+		transaction-type="RESOURCE_LOCAL">
+		<description>Hibernate JPA Configuration pour l'application Games Corner</description>
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+		<properties>
+			<property name="javax.persistence.jdbc.driver"
+				value="org.postgresql.Driver" />
+		</properties>
+	</persistence-unit>
+</persistence>
