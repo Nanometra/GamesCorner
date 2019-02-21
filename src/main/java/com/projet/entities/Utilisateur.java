@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
 import javax.persistence.Entity;
@@ -15,6 +16,8 @@ import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.joda.time.DateTime;
 
@@ -41,7 +44,11 @@ public abstract class Utilisateur implements Serializable {
 	protected String motDePasse;
 	protected String confirmationMotDePasse;
 	protected String email;
+	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(unique = true, nullable = true)
 	protected DateTime dateInscription;
+	
 	protected String imageProfil;
 	// Indique si l'utilisateur est également vendeur sur la partie vente particulier à particulier
 	protected Boolean vendeur;

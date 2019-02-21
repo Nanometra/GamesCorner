@@ -4,5 +4,15 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
+	
+	<!-- Permet aux managed bean de JSF et le context IoC de fonctionner ensemble.
+		 Ce el-resolver va connecter les managed bean et leur pages JSF correspondantes 
+		 à la couche service de Spring correspondante.
+	 -->
+	<application>
+		<el-resolver>
+			org.springframework.web.jsf.el.SpringBeanFacesELResolver
+		</el-resolver>
+	</application>
 
 </faces-config>

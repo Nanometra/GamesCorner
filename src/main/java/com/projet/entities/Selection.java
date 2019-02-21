@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "selection")
@@ -38,6 +39,7 @@ public class Selection implements Serializable {
 	@JoinColumn(name="commande_id")
 	private Commande commande;
 
+	@Transient
 	private Panier panier;
 	
 	public Selection() {

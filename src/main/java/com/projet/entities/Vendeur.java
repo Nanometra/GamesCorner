@@ -2,9 +2,12 @@ package com.projet.entities;
 
 import java.util.Map;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.joda.time.DateTime;
 
@@ -17,7 +20,8 @@ public class Vendeur extends Utilisateur {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	
+	@Temporal(TemporalType.TIMESTAMP)
+	@Column(unique = true, nullable = true)
 	private DateTime dateDebutVendeur;
 	// % de commission prélevé par le site au vendeur
 	private Float commission;

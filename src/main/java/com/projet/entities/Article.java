@@ -15,6 +15,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.joda.time.DateTime;
 
@@ -39,6 +41,7 @@ public abstract class Article implements Serializable {
 	protected String image;
 	protected Float rating;
 	// date de sortie de l'article
+	@Temporal(TemporalType.TIMESTAMP)
 	protected DateTime dateSortie;
 
 	@ManyToOne(fetch = FetchType.LAZY)

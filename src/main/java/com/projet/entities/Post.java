@@ -13,6 +13,8 @@ import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.joda.time.DateTime;
 
@@ -31,9 +33,11 @@ public abstract class Post implements Serializable {
 	@Column(unique = true, nullable = true)
 	protected int id;
 	
+	@Temporal(TemporalType.TIMESTAMP)
 	@Column(unique = true, nullable = true)
 	protected DateTime datePoste;
 	
+	@Temporal(TemporalType.TIMESTAMP)
 	protected DateTime dateModification;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
