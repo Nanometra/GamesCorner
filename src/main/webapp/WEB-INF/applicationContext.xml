@@ -36,6 +36,23 @@
 		</property>
 	</bean> 
 	
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="${POSTGRESQL_DRIVER}" />
+		<property name="url" value="${POSTGRESQL_URL}"></property>
+		<property name="username" value="${POSTGRESQL_USER}"></property>
+		<property name="password" value="${POSTGRESQL_PASSWORD}"></property>
+	</bean>
+		
+	<!-- ****************************** JPA configuration ****************************** -->
+	
+	<!-- Détection des annotations @Transactionnal dans la couche Service -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- Transaction Manager -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	
 	<!-- Entity Manager Factory -->
 	<!-- localEntityManagerFactroryBean pour les entity manager crées et pris en 
 		 charge par l'application (le code).
@@ -49,13 +66,5 @@
 		 -->
 		 <property name="persistenceUnitName" value="games_corner_PU"></property>
 	</bean>
-	
-	<!-- Transaction Manager -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-	
-	<!-- Détection des annotations @Transactionnal dans la couche Service -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
 	
 </beans>
