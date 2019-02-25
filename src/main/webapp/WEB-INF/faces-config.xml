@@ -8,6 +8,8 @@
 	<!-- Permet aux managed bean de JSF et le context IoC de fonctionner ensemble.
 		 Ce el-resolver va connecter les managed bean et leur pages JSF correspondantes 
 		 à la couche service de Spring correspondante.
+		 SpringBeanFacesELResolver est la classe actuellement utilisée. 
+		 DelegatingVariableResolver est l'ancienne classe pour JSF 1.1 maintenant dépréciée.
 	 -->
 	<application>
 		<el-resolver>

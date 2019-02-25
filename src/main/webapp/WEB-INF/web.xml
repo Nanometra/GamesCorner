@@ -34,6 +34,12 @@
   	<param-value>bootstrap</param-value>
   </context-param>
   
+  <!-- Paramètre qui précise les fichiers de configuration que Spring va utiliser. -->
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>/WEB-INF/applicationContext*.xml</param-value>
+  </context-param>  
+  
   <!-- Forcer la valeur d'une string comme valeur nulle plutôt qu'une chaine vide -->
   <context-param>
   	<param-name>javax.faces.INTERPRET_EMPTY_STRING_SUBMITTED_VALUES_AS_NULL</param-name>
