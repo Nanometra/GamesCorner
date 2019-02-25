@@ -43,7 +43,7 @@
   <!-- Configuration du DataSource. -->
   <resource-ref>
   	<description>DataSource postgreSQL pour Games Corner</description>  
-  	<res-ref>jdbc/DataSourceGamesCorner</res-ref>
+  	<res-ref-name>jdbc/DataSourceGamesCorner</res-ref-name>
   	<res-type>javax.sql.DataSource</res-type>
   	<res-auth>Container</res-auth>
   </resource-ref>
