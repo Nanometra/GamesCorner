@@ -13,9 +13,5 @@
 		<description>Hibernate JPA Configuration pour l'application Games Corner</description>
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-		<properties>
-			<property name="javax.persistence.jdbc.driver"
-				value="org.postgresql.Driver" />
-		</properties>
 	</persistence-unit>
 </persistence>
