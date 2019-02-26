@@ -9,7 +9,7 @@
 	<!-- Active la détection automatique des annotations Spring comme @Autowwired ou encore @Configuration -->
 	<context:annotation-config />
 	<!-- Déclaration du fichier de configuration -->
-	<context:property-placeholder location="classpath:/com/projet/properties/dao.properties" />
+	<context:property-placeholder location="classpath:/com/projet/properties/db.properties" />
 	
 	<!-- Scan des classes pour trouver les composants -->
 	<context:component-scan base-package="com.projet" />

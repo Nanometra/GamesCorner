@@ -2,10 +2,11 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
   <display-name>GamesCorner</display-name>
   
-  <context-param>
-  	<param-name>contextConfigLocation</param-name>
-  	<param-value>classpath:/*Context.xml</param-value>
-  </context-param>
+  <!-- Paramètre qui précise les fichiers de configuration que Spring va utiliser. -->  
+<!--   <context-param> -->
+<!--   	<param-name>contextConfigLocation</param-name> -->
+<!--   	<param-value>classpath:/*Context.xml</param-value> -->
+<!--   </context-param> -->
   
   <!-- Les listeners permettent de lier le contexte d'application de spring au
   	   contexte du servlet (JSF).
@@ -37,7 +38,7 @@
   <!-- Paramètre qui précise les fichiers de configuration que Spring va utiliser. -->
   <context-param>
   	<param-name>contextConfigLocation</param-name>
-  	<param-value>/WEB-INF/applicationContext*.xml</param-value>
+  	<param-value>/WEB-INF/*Context.xml</param-value>
   </context-param>  
   
   <!-- Forcer la valeur d'une string comme valeur nulle plutôt qu'une chaine vide -->
