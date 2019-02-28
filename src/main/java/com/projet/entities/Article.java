@@ -1,6 +1,7 @@
 package com.projet.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Map;
 
 import javax.persistence.CascadeType;
@@ -42,7 +43,7 @@ public abstract class Article implements Serializable {
 	protected Float rating;
 	// date de sortie de l'article
 	@Temporal(TemporalType.TIMESTAMP)
-	protected DateTime dateSortie;
+	protected Date dateSortie;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "vendeur_id")
@@ -130,11 +131,11 @@ public abstract class Article implements Serializable {
 		this.listeSelection = listeSelection;
 	}
 
-	public DateTime getDateSortie() {
+	public Date getDateSortie() {
 		return dateSortie;
 	}
 
-	public void setDateSortie(DateTime dateSortie) {
+	public void setDateSortie(Date dateSortie) {
 		this.dateSortie = dateSortie;
 	}
 

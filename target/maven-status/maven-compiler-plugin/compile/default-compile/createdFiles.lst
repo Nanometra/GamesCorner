@@ -5,6 +5,7 @@ com\projet\dao\IPostDAO.class
 com\projet\entities\Post.class
 com\projet\dao\IArticleDAO.class
 com\projet\entities\Client.class
+com\projet\service\IGeneriqueService.class
 com\projet\entities\Commande.class
 com\projet\enums\Type.class
 com\projet\entities\Vendeur.class

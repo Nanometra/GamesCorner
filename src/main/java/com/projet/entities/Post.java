@@ -1,6 +1,7 @@
 package com.projet.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,7 +17,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.joda.time.DateTime;
 
 @Entity
 @Table(name="post")
@@ -35,10 +35,10 @@ public abstract class Post implements Serializable {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(unique = true, nullable = true)
-	protected DateTime datePoste;
+	protected Date datePoste;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	protected DateTime dateModification;
+	protected Date dateModification;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="utilisateur_id")
@@ -56,19 +56,19 @@ public abstract class Post implements Serializable {
 		this.id = id;
 	}
 
-	public DateTime getDatePoste() {
+	public Date getDatePoste() {
 		return datePoste;
 	}
 
-	public void setDatePoste(DateTime datePoste) {
+	public void setDatePoste(Date datePoste) {
 		this.datePoste = datePoste;
 	}
 	
-	public DateTime getDateModification() {
+	public Date getDateModification() {
 		return dateModification;
 	}
 
-	public void setDateModification(DateTime dateModification) {
+	public void setDateModification(Date dateModification) {
 		this.dateModification = dateModification;
 	}
 	public Utilisateur getUtilisateur() {

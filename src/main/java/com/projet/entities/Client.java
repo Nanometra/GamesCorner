@@ -9,7 +9,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name="client")
 /*
  * On peut déterminer le nom de la valeur qui sera rentrée dans la colonne discriminante 
  * dans la table avec l'annotation @DiscriminationValue. Par défaut, cette valeur est settée 

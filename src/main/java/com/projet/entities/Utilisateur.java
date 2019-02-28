@@ -1,6 +1,7 @@
 package com.projet.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,7 +20,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.joda.time.DateTime;
 
 @Entity
 @Table(name="utilisateur")
@@ -47,7 +47,7 @@ public abstract class Utilisateur implements Serializable {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(unique = true, nullable = true)
-	protected DateTime dateInscription;
+	protected Date dateInscription;
 	
 	protected String imageProfil;
 	// Indique si l'utilisateur est également vendeur sur la partie vente particulier à particulier
@@ -150,11 +150,11 @@ public abstract class Utilisateur implements Serializable {
 		this.email = email;
 	}
 
-	public DateTime getDateInscription() {
+	public Date getDateInscription() {
 		return dateInscription;
 	}
 
-	public void setDateInscription(DateTime dateInscription) {
+	public void setDateInscription(Date dateInscription) {
 		this.dateInscription = dateInscription;
 	}
 

@@ -11,7 +11,22 @@
 	<persistence-unit name="games_corner_PU"
 		transaction-type="RESOURCE_LOCAL">
 		<description>Hibernate JPA Configuration pour l'application Games Corner</description>
+		<!-- Remplace la classe dépréciée suivante : org.hibernate.ejb.HibernatePersistence -->
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<!-- 		<class>com.projet.entities.Article</class> -->
+<!-- 		<class>com.projet.entities.Client</class> -->
+<!-- 		<class>com.projet.entities.Commande</class> -->
+<!-- 		<class>com.projet.entities.Commentaire</class> -->
+<!-- 		<class>com.projet.entities.Post</class> -->
+<!-- 		<class>com.projet.entities.Selection</class> -->
+<!-- 		<class>com.projet.entities.Utilisateur</class> -->
+<!-- 		<class>com.projet.entities.Vendeur</class> -->
 
+<!-- 		<properties> -->
+<!-- 			<property name="hibernate.show_sql" value="true"/> -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="create"/> -->
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/> -->
+<!-- 		</properties> -->
+		
 	</persistence-unit>
 </persistence>

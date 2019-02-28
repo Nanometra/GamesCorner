@@ -9,7 +9,7 @@
 	<!-- Active la détection automatique des annotations Spring comme @Autowwired ou encore @Configuration -->
 	<context:annotation-config />
 	<!-- Déclaration du fichier de configuration -->
-	<context:property-placeholder location="classpath:/com/projet/properties/db.properties" />
+<!-- 	<context:property-placeholder location="classpath:/com/projet/properties/*.properties" /> -->
 	
 	<!-- Scan des classes pour trouver les composants -->
 	<context:component-scan base-package="com.projet" />
@@ -26,15 +26,19 @@
 				- SYSTEM_PROPERTIES_MODE_OVERRIDE 
       				Check system properties first, before trying the specified properties.
 		 -->
-		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"></property>
+<!-- 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"></property> -->
 		<property name="ignoreResourceNotFound" value="true"></property>
 		<property name="locations">
 			<list>
-				<value>classpath:com/projet/properties/*.properties</value>
+				<value>classpath*:com/projet/properties/*.properties</value>
 			</list>
 		</property>
 	</bean> 
 	
+	<!-- Ce bean ne gère pas les pools de connexions, il est à utiliser uniquement dans un environnement de développement ou de test et non pas dans un 
+		 environnement de production. 
+	 -->
+
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${POSTGRESQL_DRIVER}" />
 		<property name="url" value="${POSTGRESQL_URL}"></property>
@@ -44,14 +48,6 @@
 		
 	<!-- ****************************** JPA configuration ****************************** -->
 	
-	<!-- Détection des annotations @Transactionnal dans la couche Service -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
-	
-	<!-- Transaction Manager -->
-	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-		<property name="entityManagerFactory" ref="entityManagerFactory" />
-	</bean>
-	
 	<!-- Entity Manager Factory -->
 	<!-- localEntityManagerFactroryBean pour les entity manager crées et pris en 
 		 charge par l'application (le code).
@@ -59,17 +55,20 @@
 	 	 en charge par le conteneur JEE. Peuvent être récupérés par les JNDI par exemple. 
 	 -->
 	 <!-- Ici, on utilise Tomcat donc on utilise LocalEntityManagerFactoryBean -->
-	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<!-- Précise l'emplacement du fichier persistence.xml à charger -->
-<!-- 		<property name="persistenceXmlLocation" value="classpath:./META-INF/persistence.xml"></property> -->
+		<property name="persistenceXmlLocation" value="classpath:./META-INF/persistence.xml"></property>
 		
 		<!-- La propriété persistenceUnitName fait référence à la persistence unit 
 			 renseignée dans le fichier META-INF/persistence.xml
 		 -->
 		 <property name="persistenceUnitName" value="games_corner_PU"></property>
 		 
+		 <!-- Précise le package contenant les model du projet -->
+		 <property name="packagesToScan" value="org.projet.entities"></property>
+		 
 		 <!-- Fait référence au datasource défini précédemment -->
-<!-- 		 <property name="dataSource" ref="dataSource"></property> -->
+		 <property name="dataSource" ref="dataSource"></property>
 		 
 		 <!-- Adaptateur JPA vers Hibernate qui permet de déterminer des propriétés spécifiques -->
 		 <property name="jpaVendorAdapter">
@@ -83,9 +82,17 @@
 		 <property name="jpaProperties">
 		 <!-- Propriétés supplémentaires pour Hibernate par exemple -->	
 		 	<props>
-		 		<prop key="hibernate.hbm2ddl.auto">${HIBERNATE.HBM2DDL.AUTO}</prop>
+		 		<prop key="hbm2ddl.auto">${HIBERNATE.HBM2DDL.AUTO}</prop>
 		 	</props>
 		 </property>
+	</bean>
+		
+	<!-- Détection des annotations @Transactionnal dans la couche Service -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+	<!-- Transaction Manager -->
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 	
 </beans>

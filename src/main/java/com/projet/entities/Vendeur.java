@@ -1,5 +1,6 @@
 package com.projet.entities;
 
+import java.util.Date;
 import java.util.Map;
 
 import javax.persistence.Column;
@@ -9,10 +10,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import org.joda.time.DateTime;
 
 @Entity
-@Table(name="vendeur")
 public class Vendeur extends Utilisateur {
 
 	/**
@@ -22,7 +21,7 @@ public class Vendeur extends Utilisateur {
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(unique = true, nullable = true)
-	private DateTime dateDebutVendeur;
+	private Date dateDebutVendeur;
 	// % de commission prélevé par le site au vendeur
 	private Float commission;
 	
@@ -34,18 +33,18 @@ public class Vendeur extends Utilisateur {
 		super();
 	}
 
-	public Vendeur(DateTime dateDebutVendeur, Float commission, Map<Long, Article> listeArticles) {
+	public Vendeur(Date dateDebutVendeur, Float commission, Map<Long, Article> listeArticles) {
 		super();
 		this.dateDebutVendeur = dateDebutVendeur;
 		this.commission = commission;
 		this.listeArticles = listeArticles;
 	}
 
-	public DateTime getDateDebutVendeur() {
+	public Date getDateDebutVendeur() {
 		return dateDebutVendeur;
 	}
 
-	public void setDateDebutVendeur(DateTime dateDebutVendeur) {
+	public void setDateDebutVendeur(Date dateDebutVendeur) {
 		this.dateDebutVendeur = dateDebutVendeur;
 	}
 
