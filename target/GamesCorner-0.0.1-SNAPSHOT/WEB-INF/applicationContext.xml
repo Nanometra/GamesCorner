@@ -26,11 +26,11 @@
 				- SYSTEM_PROPERTIES_MODE_OVERRIDE 
       				Check system properties first, before trying the specified properties.
 		 -->
-		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"></property>
+<!-- 		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE"></property> -->
 		<property name="ignoreResourceNotFound" value="true"></property>
 		<property name="locations">
 			<list>
-				<value>classpath:com/projet/properties/*.properties</value>
+				<value>classpath*:com/projet/properties/*.properties</value>
 			</list>
 		</property>
 	</bean> 
@@ -38,6 +38,7 @@
 	<!-- Ce bean ne gère pas les pools de connexions, il est à utiliser uniquement dans un environnement de développement ou de test et non pas dans un 
 		 environnement de production. 
 	 -->
+
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="${POSTGRESQL_DRIVER}" />
 		<property name="url" value="${POSTGRESQL_URL}"></property>
@@ -64,7 +65,7 @@
 		 <property name="persistenceUnitName" value="games_corner_PU"></property>
 		 
 		 <!-- Précise le package contenant les model du projet -->
-		 <property name="packageToScan" value="org.projet.entities"></property>
+		 <property name="packagesToScan" value="org.projet.entities"></property>
 		 
 		 <!-- Fait référence au datasource défini précédemment -->
 		 <property name="dataSource" ref="dataSource"></property>
@@ -85,7 +86,6 @@
 		 	</props>
 		 </property>
 	</bean>
-	
 		
 	<!-- Détection des annotations @Transactionnal dans la couche Service -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
