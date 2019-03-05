@@ -1,14 +1,14 @@
 package com.projet.enums;
 
-public enum Type {
-	Action, Aventure, RPG, Rythme("Jeux de rythme"), Sport, Stratégie, Tactique;
+public enum GenreJV {
+	Action, Aventure, FPS, RPG, Rythme("Jeux de rythme"), Sport, Stratégie, Tactique;
 
 	private String name;
 
-	private Type() {
+	private GenreJV() {
 	}
 
-	Type(String name) {
+	GenreJV(String name) {
 		this.name = name;
 	}
 

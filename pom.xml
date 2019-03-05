@@ -66,6 +66,8 @@
 	<!-- Dépendances -->
 	<!-- =============================================================== -->
 	<dependencies>
+
+		<!-- Implémentation de JSF -->
 		<!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
 		<dependency>
 			<groupId>com.sun.faces</groupId>
@@ -85,6 +87,9 @@
 			<version>${servlet.api.version}</version>
 			<!-- <scope>provided</scope> -->
 		</dependency>
+
+		<!-- ============================================================================== -->
+
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -135,7 +140,15 @@
 			<artifactId>spring-orm</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>5.1.1.RELEASE</version>
+			<scope>test</scope>
+		</dependency>
 
+		<!-- ============================================================================== -->
 
 		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
 		<dependency>
@@ -162,6 +175,15 @@
 			<artifactId>hibernate-search-orm</artifactId>
 			<version>${hibernate.search.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
 
 	</dependencies>
 
