@@ -18,8 +18,8 @@ public class UtilisateurDAOImpl implements IUtilisateurDAO {
 	}
 
 	@Override
-	public Boolean add(Utilisateur entity) {
-		return null;
+	public void add(Utilisateur entity) {
+		
 	}
 
 	@Override

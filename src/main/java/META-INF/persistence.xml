@@ -29,4 +29,9 @@
 <!-- 		</properties> -->
 		
 	</persistence-unit>
+	
+	<!-- Serveur application -->
+<!-- 	<persistence-unit name="games_corner_JTA_PU" transaction-type="JTA"> -->
+		
+<!-- 	</persistence-unit> -->
 </persistence>

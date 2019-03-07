@@ -48,6 +48,8 @@
 		<jdk.source.version>1.8</jdk.source.version>
 		<!-- JDK target -->
 		<jdk.target.version>1.8</jdk.target.version>
+		<!-- slf4J Log Java -->
+		<slf4j.version>1.7.26</slf4j.version>
 	</properties>
 
 	<!-- =============================================================== -->
@@ -88,6 +90,20 @@
 			<!-- <scope>provided</scope> -->
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<version>1</version>
+		</dependency>
+
 		<!-- ============================================================================== -->
 
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
@@ -114,12 +130,18 @@
 			<artifactId>joda-time</artifactId>
 			<version>${joda.version}</version>
 		</dependency>
+
+		<!-- ============================================================================== -->
+
 		<!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>${postgresql.version}</version>
 		</dependency>
+
+		<!-- ============================================================================== -->
+
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -150,13 +172,6 @@
 
 		<!-- ============================================================================== -->
 
-		<!-- https://mvnrepository.com/artifact/javax.inject/javax.inject -->
-		<dependency>
-			<groupId>javax.inject</groupId>
-			<artifactId>javax.inject</artifactId>
-			<version>1</version>
-		</dependency>
-
 		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -176,13 +191,14 @@
 			<version>${hibernate.search.version}</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl -->
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>1.2</version>
-		</dependency>
+		<!-- ============================================================================== -->
 
+		<!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
 
 
 	</dependencies>
