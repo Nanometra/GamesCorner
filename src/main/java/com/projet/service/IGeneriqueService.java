@@ -8,7 +8,7 @@ public interface IGeneriqueService<T> {
 	
 	List<T> findAll();
 	
-	Boolean add (T entity);
+	void add (T entity);
 	
 	void delete (Integer id);
 	
