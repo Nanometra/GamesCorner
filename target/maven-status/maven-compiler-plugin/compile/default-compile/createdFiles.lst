@@ -3,11 +3,13 @@ com\projet\entities\JeuxDeRole.class
 com\projet\entities\Commentaire.class
 com\projet\entities\Client.class
 com\projet\service\IGeneriqueService.class
+com\projet\service\IPostService.class
 com\projet\entities\Article.class
 com\projet\entities\Selection.class
 com\projet\dao\impl\ArticleDAOImpl.class
 com\projet\entities\JeuxVideo.class
 com\projet\dao\IUtilisateurDAO.class
+com\projet\service\IUtilisateurService.class
 com\projet\dao\IGeneriqueDAO.class
 com\projet\enums\GenreJV.class
 com\projet\entities\Panier.class
@@ -16,7 +18,9 @@ com\projet\dao\IPostDAO.class
 com\projet\entities\Post.class
 com\projet\dao\IArticleDAO.class
 com\projet\enums\GenreSociete.class
+com\projet\service\IArticleService.class
 com\projet\entities\Commande.class
 com\projet\entities\Vendeur.class
 com\projet\entities\Utilisateur.class
+com\projet\service\impl\ArticleServiceImpl.class
 com\projet\dao\impl\UtilisateurDAOImpl.class

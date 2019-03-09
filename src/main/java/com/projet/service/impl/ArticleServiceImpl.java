@@ -12,7 +12,7 @@ import com.projet.service.IArticleService;
 @Service
 public class ArticleServiceImpl implements IArticleService {
 
-	@Autowired
+//	@Autowired
 	private IArticleDAO articleDAO;
 	
 	@Override
@@ -23,25 +23,22 @@ public class ArticleServiceImpl implements IArticleService {
 
 	@Override
 	public List<Article> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return articleDAO.findAll();
 	}
 
 	@Override
-	public void add(Article entity) {
-		// TODO Auto-generated method stub
+	public void add(Article article) {
+		this.articleDAO.add(article);
 	}
 
 	@Override
 	public void delete(Integer id) {
-		// TODO Auto-generated method stub
-		
+		this.articleDAO.delete(id);		
 	}
 
 	@Override
-	public Article update(Article entity) {
-		// TODO Auto-generated method stub
-		return null;
+	public Article update(Article article) {
+		return articleDAO.update(article);
 	}
 
 }
