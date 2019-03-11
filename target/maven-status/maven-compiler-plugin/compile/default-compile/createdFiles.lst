@@ -12,6 +12,7 @@ com\projet\dao\IUtilisateurDAO.class
 com\projet\service\IUtilisateurService.class
 com\projet\dao\IGeneriqueDAO.class
 com\projet\enums\GenreJV.class
+com\projet\managedBeans\InscriptionBean.class
 com\projet\entities\Panier.class
 com\projet\enums\GenreRole.class
 com\projet\dao\IPostDAO.class

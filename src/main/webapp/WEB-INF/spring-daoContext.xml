@@ -12,7 +12,7 @@
 <!-- 	<context:property-placeholder location="classpath:/com/projet/properties/*.properties" /> -->
 	
 	<!-- Scan des classes pour trouver les composants -->
-	<context:component-scan base-package="com.projet" />
+<!-- 	<context:component-scan base-package="com.projet.dao, com.projet.service" /> -->
 	
 	<!-- Déclare le bean permettant l'import du fichier de configuration pour la base de données -->
 	<bean id="propertyPlaceHolder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

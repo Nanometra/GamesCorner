@@ -2,6 +2,9 @@ package com.projet.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface IGeneriqueService<T> {
 
 	T findById(Integer id);
