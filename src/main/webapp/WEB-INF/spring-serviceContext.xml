@@ -11,7 +11,7 @@
 	<context:annotation-config />
 	
 	<!-- Scan des classes pour trouver les composants -->
-	<context:component-scan base-package="com.projet" />
+	<context:component-scan base-package="com.projet.dao" />
 	
 	<!-- Détection des annotations @Transactionnal dans la couche Service -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
