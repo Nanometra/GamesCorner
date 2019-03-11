@@ -46,4 +46,8 @@ public class ArticleServiceImpl implements IArticleService {
 		return articleDAO.update(article);
 	}
 
+	public void setArticleDAO(IArticleDAO articleDAO) {
+		this.articleDAO = articleDAO;
+	}
+	
 }
