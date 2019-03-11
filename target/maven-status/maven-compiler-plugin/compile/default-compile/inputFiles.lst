@@ -10,6 +10,7 @@ D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\entities\Panier.ja
 D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\service\impl\ArticleServiceImpl.java
 D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\dao\impl\ArticleDAOImpl.java
 D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\entities\JeuxDeRole.java
+D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\service\impl\UtilisateurServiceImpl.java
 D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\service\IUtilisateurService.java
 D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\entities\Post.java
 D:\Workspace_GamesCorner\GamesCorner\src\main\java\com\projet\dao\impl\UtilisateurDAOImpl.java
