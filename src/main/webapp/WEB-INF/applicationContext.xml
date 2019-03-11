@@ -7,13 +7,6 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
 
-	<!-- Active la détection automatique des annotations Spring comme @Autowwired ou encore @Configuration -->
-	<context:annotation-config />
-	
-	<!-- Scan des classes pour trouver les composants -->
-	<context:component-scan base-package="com.projet.dao" />
-	
-	<!-- Détection des annotations @Transactionnal dans la couche Service -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
-	
+	<import resource="classpath*:spring-*Context.xml"/>
+
 </beans>

@@ -47,7 +47,7 @@
 	<!-- Paramètre qui précise les fichiers de configuration que Spring va utiliser. -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/*Context.xml</param-value>
+		<param-value>/WEB-INF/spring-*Context.xml</param-value>
 	</context-param>
 
 	<!-- Forcer la valeur d'une string comme valeur nulle plutôt qu'une chaine 
