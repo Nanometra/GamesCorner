@@ -1,0 +1,5 @@
+1. Partie à rajouter dans la partie résolution de problèmes pour le problème d'autowiring.
+
+Pour prendre en compte les annotations java dans le contexte Spring (et dans notre cas ajouter les différents fichiers de configuration du projet), il faut :
+Sélectionner le projet --> Propriétés --> Spring --> Beans Support --> Config Detection et cocher la dernière option qui auto détecte les fichiers avec des annotations Java Spring  
+	
