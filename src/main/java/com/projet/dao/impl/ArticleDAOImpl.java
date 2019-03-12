@@ -6,11 +6,12 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.projet.dao.IGeneriqueDAO;
 import com.projet.entities.Article;
 
-@Component
+@Repository
 public class ArticleDAOImpl implements IGeneriqueDAO<Article> {
 
 	@PersistenceContext

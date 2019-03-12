@@ -10,7 +10,6 @@ import org.springframework.stereotype.Controller;
 
 import com.projet.service.IUtilisateurService;
 
-@Controller
 @Named("inscription")
 @RequestScoped
 public class InscriptionBean implements Serializable {
@@ -23,5 +22,17 @@ public class InscriptionBean implements Serializable {
 	@Autowired
 	private IUtilisateurService utilisateurService;
 	
+	public InscriptionBean(IUtilisateurService utilisateurService) {
+		super();
+		this.utilisateurService = utilisateurService;
+	}
+
+	public IUtilisateurService getUtilisateurService() {
+		return utilisateurService;
+	}
+
+	public void setUtilisateurService(IUtilisateurService utilisateurService) {
+		this.utilisateurService = utilisateurService;
+	}
 	
 }

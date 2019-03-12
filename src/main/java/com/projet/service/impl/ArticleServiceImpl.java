@@ -3,7 +3,6 @@ package com.projet.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,12 +10,17 @@ import com.projet.dao.IArticleDAO;
 import com.projet.entities.Article;
 import com.projet.service.IArticleService;
 
-@Component
+@Service
 public class ArticleServiceImpl implements IArticleService {
 
 	@Autowired
 	private IArticleDAO articleDAO;
 	
+//	public ArticleServiceImpl(IArticleDAO articleDAO) {
+//		super();
+//		this.articleDAO = articleDAO;
+//	}
+
 	@Override
 	public Article findById(Integer id) {
 		// TODO Auto-generated method stub
@@ -46,8 +50,13 @@ public class ArticleServiceImpl implements IArticleService {
 		return articleDAO.update(article);
 	}
 
+//	@Autowired
 	public void setArticleDAO(IArticleDAO articleDAO) {
 		this.articleDAO = articleDAO;
+	}
+
+	public IArticleDAO getArticleDAO() {
+		return articleDAO;
 	}
 	
 }

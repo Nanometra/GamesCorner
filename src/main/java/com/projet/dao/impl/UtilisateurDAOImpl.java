@@ -3,11 +3,12 @@ package com.projet.dao.impl;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.projet.dao.IUtilisateurDAO;
 import com.projet.entities.Utilisateur;
 
-@Component
+@Repository
 public class UtilisateurDAOImpl implements IUtilisateurDAO {
 
 	@Override

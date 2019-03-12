@@ -3,15 +3,19 @@ package com.projet.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.projet.dao.IUtilisateurDAO;
 import com.projet.entities.Utilisateur;
 import com.projet.service.IUtilisateurService;
 
-@Component
-public class UtilisateurServiceImpl implements IUtilisateurService {
+@Service
+public class UtilisateurServiceImpl implements IUtilisateurService {	
+	
+//	public UtilisateurServiceImpl(IUtilisateurDAO utilisateurDAO) {
+//		super();
+//		this.utilisateurDAO = utilisateurDAO;
+//	}
 
 	@Autowired
 	private IUtilisateurDAO utilisateurDAO;
@@ -46,4 +50,13 @@ public class UtilisateurServiceImpl implements IUtilisateurService {
 		return null;
 	}
 
+//	@Autowired
+	public void setUtilisateurDAO(IUtilisateurDAO utilisateurDAO) {
+		this.utilisateurDAO = utilisateurDAO;
+	}
+
+	public IUtilisateurDAO getUtilisateurDAO() {
+		return utilisateurDAO;
+	}
+	
 }
