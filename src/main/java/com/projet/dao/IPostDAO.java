@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.projet.entities.Post;
 
-@Repository
+//@Repository
 public interface IPostDAO extends IGeneriqueDAO<Post> {
 
 }

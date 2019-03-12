@@ -9,7 +9,7 @@ import com.projet.dao.IUtilisateurDAO;
 import com.projet.entities.Utilisateur;
 import com.projet.service.IUtilisateurService;
 
-@Service
+//@Service
 public class UtilisateurServiceImpl implements IUtilisateurService {	
 	
 //	public UtilisateurServiceImpl(IUtilisateurDAO utilisateurDAO) {

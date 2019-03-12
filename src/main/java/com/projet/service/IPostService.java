@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.projet.entities.Post;
 
-@Service
+//@Service
 public interface IPostService extends IGeneriqueService<Post> {
 
 }

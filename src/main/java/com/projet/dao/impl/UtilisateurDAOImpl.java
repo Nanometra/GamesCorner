@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.projet.dao.IUtilisateurDAO;
 import com.projet.entities.Utilisateur;
 
-@Repository
+//@Repository
 public class UtilisateurDAOImpl implements IUtilisateurDAO {
 
 	@Override

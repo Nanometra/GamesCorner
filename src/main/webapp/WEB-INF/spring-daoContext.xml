@@ -88,7 +88,7 @@
 	</bean>
 		
 	<!-- Détection des annotations @Transactionnal dans la couche Service -->
-	<tx:annotation-driven transaction-manager="transactionManager" />
+<!-- 	<tx:annotation-driven transaction-manager="transactionManager" /> -->
 	
 	<!-- Transaction Manager -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

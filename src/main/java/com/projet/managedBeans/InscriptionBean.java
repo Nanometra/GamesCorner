@@ -1,6 +1,8 @@
 package com.projet.managedBeans;
 
 import java.io.Serializable;
+import java.net.URL;
+import java.net.URLClassLoader;
 
 import javax.faces.bean.RequestScoped;
 import javax.inject.Named;
@@ -10,7 +12,7 @@ import org.springframework.stereotype.Controller;
 
 import com.projet.service.IUtilisateurService;
 
-@Named("inscription")
+@Named("inscriptionClient")
 @RequestScoped
 public class InscriptionBean implements Serializable {
 

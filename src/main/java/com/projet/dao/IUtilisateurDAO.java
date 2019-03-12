@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import com.projet.entities.Utilisateur;
 
-@Repository
+//@Repository
 public interface IUtilisateurDAO extends IGeneriqueDAO<Utilisateur> {
 
 }
